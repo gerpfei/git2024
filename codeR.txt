@@ -1,0 +1,15 @@
+if(!require(ggplot2)) {
+  install.packages("ggplot2")
+}
+
+# Charger ggplot2
+library(ggplot2)
+
+# Créer le graphique de dispersion avec une ligne de régression
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point(color = 'blue', size = 3) +    
+  geom_smooth(method = 'lm', color = 'red') + 
+  labs(title = "Relation entre la puissance et la consommation d'essence",
+       x = "Puissance (hp)",
+       y = "Consommation d'essence (mpg)") +
+  theme_minimal()    
